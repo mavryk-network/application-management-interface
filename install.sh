@@ -15,9 +15,9 @@ if which curl >/dev/null; then
 
     set -- curl -L $PROGRESS -o "$TMP_NAME"
     if [ "$PRERELEASE" = true ]; then
-        LATEST=$(curl -sL https://api.github.com/repos/alis-is/ami/releases | grep tag_name | sed 's/  "tag_name": "//g' | sed 's/",//g' | head -n 1 | tr -d '[:space:]')
+        LATEST=$(curl -sL https://api.github.com/repos/mavryk-network/application-management-interface/releases | grep tag_name | sed 's/  "tag_name": "//g' | sed 's/",//g' | head -n 1 | tr -d '[:space:]')
     else
-        LATEST=$(curl -sL https://api.github.com/repos/alis-is/ami/releases/latest | grep tag_name | sed 's/  "tag_name": "//g' | sed 's/",//g' | tr -d '[:space:]')
+        LATEST=$(curl -sL https://api.github.com/repos/mavryk-network/application-management-interface/releases/latest | grep tag_name | sed 's/  "tag_name": "//g' | sed 's/",//g' | tr -d '[:space:]')
     fi
 else
     if wget --help  2>&1 | grep "--show-progress" >/dev/null 2>&1; then 
@@ -25,9 +25,9 @@ else
     fi
     set -- wget -q $PROGRESS -O "$TMP_NAME"
     if [ "$PRERELEASE" = true ]; then
-        LATEST=$(wget -qO- https://api.github.com/repos/alis-is/ami/releases | grep tag_name | sed 's/  "tag_name": "//g' | sed 's/",//g' | head -n 1 | tr -d '[:space:]')
+        LATEST=$(wget -qO- https://api.github.com/repos/mavryk-network/application-management-interface/releases | grep tag_name | sed 's/  "tag_name": "//g' | sed 's/",//g' | head -n 1 | tr -d '[:space:]')
     else
-        LATEST=$(wget -qO- https://api.github.com/repos/alis-is/ami/releases/latest | grep tag_name | sed 's/  "tag_name": "//g' | sed 's/",//g' | tr -d '[:space:]')
+        LATEST=$(wget -qO- https://api.github.com/repos/mavryk-network/application-management-interface/releases/latest | grep tag_name | sed 's/  "tag_name": "//g' | sed 's/",//g' | tr -d '[:space:]')
     fi
 fi
 
@@ -78,7 +78,7 @@ fi
 
 # install ami
 echo "Downloading ami $LATEST..."
-if "$@" "https://github.com/alis-is/ami/releases/download/$LATEST/ami.lua" &&
+if "$@" "https://github.com/mavryk-network/application-management-interface/releases/download/$LATEST/ami.lua" &&
     cp "$TMP_NAME" "$DESTINATION" && rm "$TMP_NAME" && chmod +x "$DESTINATION"; then
     echo "ami $LATEST successfuly installed"
 else

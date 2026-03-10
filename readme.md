@@ -2,7 +2,7 @@
 
 ### Setup
 
-`wget -q https://raw.githubusercontent.com/alis-is/ami/master/install.sh -O /tmp/install.sh && sudo sh /tmp/install.sh`
+`wget -q https://raw.githubusercontent.com/mavryk-network/application-management-interface/master/install.sh -O /tmp/install.sh && sudo sh /tmp/install.sh`
 
 ### Usage
 
@@ -10,8 +10,8 @@
 2. Create `app.json` or `app.hjson` with app configuration you like, e.g.:
 ```hjson
 {
-  id: xtz-node
-  type: xtz.node
+  id: mvrk-node
+  type: mvrk.node
   configuration:
   {
     NODE_TYPE: node

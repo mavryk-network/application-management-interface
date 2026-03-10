@@ -16,8 +16,8 @@
 local repository_options = {}
 
 local mirrors = {
-	"https://air.alis.is/ami/",
-	"https://raw.githubusercontent.com/alis-is/air/main/ami/"
+	-- "https://air.alis.is/ami/",
+	"https://raw.githubusercontent.com/mavryk-network/application-image-repository/main/ami/"
 }
 
 local DEFAULT_REPOSITORY_URL
